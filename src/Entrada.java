@@ -6,6 +6,9 @@ public class Entrada extends Plato {
 
     @Override
     public double calcularPrecio() throws PrecioIncorrectoException {
+        if (getPrecioBase() < 0) {
+            throw new PrecioIncorrectoException("Precio incorrecto");
+        }
         return getPrecioBase() * IVA;
     }
 }
