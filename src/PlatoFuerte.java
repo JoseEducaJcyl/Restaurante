@@ -1,4 +1,11 @@
-package PACKAGE_NAME;
+public class PlatoFuerte extends Plato {
+    final double IVA = 1.25;
+    public PlatoFuerte(String nombre, double precioBase) {
+        super(nombre, precioBase);
+    }
 
-public class PlatoFuerte {
+    @Override
+    public double calcularPrecio() throws PrecioIncorrectoException {
+        return getPrecioBase() * IVA;
+    }
 }

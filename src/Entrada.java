@@ -1,4 +1,11 @@
-package PACKAGE_NAME;
+public class Entrada extends Plato {
+    final double IVA = 1.25;
+    public Entrada(String nombre, double precioBase) {
+        super(nombre, precioBase);
+    }
 
-public class Entrada {
+    @Override
+    public double calcularPrecio() throws PrecioIncorrectoException {
+        return getPrecioBase() * IVA;
+    }
 }
